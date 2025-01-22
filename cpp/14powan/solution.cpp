@@ -13,3 +13,14 @@ int pow(int a, int n) {
     }
     return res;
 }
+
+int pow(int a, int n) {
+    if (n == 0) {
+        return 1;
+    }
+    int res = pow(a, n/2);
+    if (n&1) {
+        return a*res*res;
+    }
+    return res*res;
+}
