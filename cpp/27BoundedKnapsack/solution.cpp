@@ -48,5 +48,5 @@ int maximizeProfit(vector<int>& weights, vector<int>& profits, int n, int capaci
         profitIncluding = profits[n-1] + maximizeProfit(weights, profits, n-1, capacity-weights[n-1], memo);
     }
     int profitExcluding = maximizeProfit(weights, profits, n-1, capacity, memo);
-    return memo[capacity][n] = (profitIncluding, profitExcluding);
+    return memo[capacity][n] = max(profitIncluding, profitExcluding);
 }
