@@ -25,8 +25,9 @@ int minAddDelOperations(string& s1, string& s2, int s1Len, int s2Len) {
   if (s1[s1Len - 1] == s2[s2Len - 1]) {
     return minAddDelOperations(s1, s2, s1Len - 1, s2Len - 1);
   }
-  return 1 + min(minAddDelOperations(s1, s2, s1Len - 1, s2Len),
-                 minAddDelOperations(s1, s2, s1Len, s2Len - 1))
+  return 1 + min(min(minAddDelOperations(s1, s2, s1Len - 1, s2Len),
+                 minAddDelOperations(s1, s2, s1Len, s2Len - 1)),
+                 minAddDelOperations(s1, s2, s1Len-1, s2Len - 1))
 }
 
 int minAddDelOperations(string& s1, string& s2, int s1Len, int s2Len,
