@@ -15,7 +15,7 @@ class UnionFind {
   }
 
   // TC: O(N)
-  void union(int p, int q) {
+  void connect(int p, int q) {
     if (find(p, q)) {
       return;
     }
